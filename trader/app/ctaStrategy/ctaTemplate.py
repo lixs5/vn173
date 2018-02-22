@@ -464,6 +464,8 @@ class ArrayManager(object):
         self.closeArray = np.zeros(size)
         self.volumeArray = np.zeros(size)
         
+        self.var1Array = np.zeros(size)
+        self.var2Array = np.zeros(size)
     #----------------------------------------------------------------------
     def updateBar(self, bar):
         """更新K线"""
@@ -482,6 +484,13 @@ class ArrayManager(object):
         self.lowArray[-1] = bar.low        
         self.closeArray[-1] = bar.close
         self.volumeArray[-1] = bar.volume
+        
+        self.var1Array[-1] = (bar.open + bar.high + bar.low + bar.close)/4
+        self.var2Array[-1] = max((bar.high-bar.low),max(abs(self.closeArray[-2]-bar.low),abs(self.closeArray[-2]-bar.high)))
+        
+        
+        
+        
         
     #----------------------------------------------------------------------
     @property
@@ -562,6 +571,11 @@ class ArrayManager(object):
             return macd, signal, hist
         return macd[-1], signal[-1], hist[-1]
     
+    def channelVar1Var2(self,fast,slow):
+        var5 = self.var4[-1] + self.var3[-1]
+        var6 = self.var4[-1] - self.var3[-1]
+        
+        
     #----------------------------------------------------------------------
     def adx(self, n, array=False):
         """ADX指标"""
