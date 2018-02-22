@@ -4,8 +4,8 @@ from vnzaif import *
 
 def testTrade():
     """测试交易"""
-    accessKey = '你的accessKey'
-    secretKey = '你的secretKey'
+    accessKey = 'b361cfea-1141-42c9-90b1-68d340eb5b59'
+    secretKey = '6e81c1b8-d4bd-4c0b-a6cc-cf52e332332a'
     
     # 创建API对象并初始化
     api = TradeApi()
@@ -51,5 +51,5 @@ def testData():
     
 if __name__ == '__main__':
     #testTrade()
-    #testTrade()
-    testData()
+    testTrade()
+    #testData()

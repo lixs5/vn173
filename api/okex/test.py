@@ -14,7 +14,7 @@ api.connect(apiKey, secretKey, True)
 sleep(3)
 
 api.login()
-#api.subscribeSpotTicker("bch_btc")
+api.subscribeSpotTicker("bch_btc")
 #api.subscribeSpotDepth("bch_btc")
 #api.subscribeSpotDepth("bch_btc", 5)
 #api.subscribeSpotDeals("bch_btc")
